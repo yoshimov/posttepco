@@ -1,0 +1,22 @@
+<project name="gcalsync" default="gcalsync">
+  <property name="proxyHost" value="proxy.kawasaki.flab.fujitsu.co.jp" />
+  <property name="proxyPort" value="8080" />
+
+  <path id="groovycp">
+    <pathelement path="src" />
+    <fileset dir="lib">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+
+  <taskdef name="groovy" classname="org.codehaus.groovy.ant.Groovy" classpathref="groovycp" />
+
+  <target name="getsample">
+    <groovy src="src/getsample.groovy" classpathref="groovycp" />
+  </target>
+
+  <target name="posttepco">
+    <groovy src="src/posttepco.groovy" classpathref="groovycp" />
+  </target>
+
+</project>
