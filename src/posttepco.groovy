@@ -32,6 +32,11 @@ for (int y = GRAPH_Y; y > GRAPH_Y-GRAPH_HEIGHT; y --) {
     if (rgb < -0xffff80) {
 	// black line
 	height = y
+	break
+    } else if (rgb > -0xff) {
+	// above the line
+	height = y + 1
+	break
     }
     // for debug
 //	println "($x, $y)=" + rgb
@@ -40,7 +45,7 @@ println "height = $height"
 juyo = (GRAPH_Y - height + 1) * RATIO
 println "hour=$hour, juyo = " + juyo
 
-if (juyo < 7000) {
+if (juyo < 7000 && juyo > 1000) {
     // post only valid data
     println "posting juyo data into spread sheet."
     posturl=formurl + "&entry.0.single=$hour&entry.1.single=$juyo"
