@@ -55,4 +55,6 @@ if (juyo < 7000 && juyo > 1000) {
     //http = new HTTPBuilder(formurl)
     //data = ['entry.0.single':date, 'entry.1.single':juyo]
     //http.post(body:data)
+} else {
+    println "[Error] fail to post juyo data."
 }
