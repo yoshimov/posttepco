@@ -2,6 +2,7 @@
 
 import java.awt.*
 import java.awt.image.*
+import java.text.*
 import javax.imageio.*
 import groovyx.net.http.*
 
@@ -48,7 +49,8 @@ println "hour=$hour, juyo = " + juyo
 if (juyo < 7000 && juyo > 1000) {
     // post only valid data
     println "posting juyo data into spread sheet."
-    posturl=formurl + "&entry.0.single=$hour&entry.1.single=$juyo"
+    df = new DecimalFormat("#.##")
+    posturl=formurl + "&entry.0.single=$hour&entry.1.single=${df.format(juyo)}"
     http = new URL(posturl)
     http.getContent()
     // http builder is not working..
