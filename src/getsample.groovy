@@ -6,9 +6,6 @@ import javax.imageio.*
 
 gifurl="http://www.tepco.co.jp/forecast/html/images/juyo-j.gif"
 
-System.setProperty("http.proxyHost", "proxy.kawasaki.flab.fujitsu.co.jp")
-System.setProperty("http.proxyPort", "8080")
-
 GRAPH_WIDTH=22
 GRAPH_HEIGHT=220
 GRAPH_X=60
